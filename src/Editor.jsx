@@ -1,9 +1,11 @@
+import Titlebar from "./Titlebar";
+
 const defaultValue = "defaultValue";
 
 const Editor = () => {
   return (
     <div>
-      <div className="title-bar">Editor</div>
+      <Titlebar value="Editor" />
       <textarea id="editor">{defaultValue}</textarea>
     </div>
   );

@@ -7,6 +7,23 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [value, setValue] = useState(initialValue);
   
+  const handleClickEditor = () => {
+    $(".preview-wrapper").toggleClass("display");
+    $("#editor").toggleClass("min-height");
+    $("#editor").toggleClass("full-height");
+    $("#editor").toggleClass("resize-vertical");
+    $("#editor").toggleClass("resize-none");
+    $(".icon").toggleClass("minimize");
+    $(".icon").toggleClass("maximize");
+  }
+
+  const handleClickPreview = () => {
+    $(".editor-wrapper").toggleClass("display");
+    $("#preview").toggleClass("full-height");
+    $(".icon").toggleClass("minimize");
+    $(".icon").toggleClass("maximize");
+  }
+
   const handleChange = (event) => {
     setValue(event.target.value);
   }
@@ -20,14 +37,14 @@ const App = () => {
       <div className="editor-wrapper">
         <div className="titlebar">
           <div>Editor</div>
-          <div className="maximize"></div>
+          <div className="icon maximize" onClick={handleClickEditor}></div>
         </div>
-        <textarea id="editor" value={value} onChange={handleChange}></textarea>
+        <textarea id="editor" className="resize-vertical min-height" value={value} onChange={handleChange}></textarea>
       </div>
       <div className="preview-wrapper">
         <div className="titlebar">
           <div>Preview</div>
-          <div className="maximize"></div>
+          <div className="icon maximize" onClick={handleClickPreview}></div>
         </div>
         <div id="preview"></div>
     </div>

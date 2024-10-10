@@ -21,9 +21,9 @@
     font-weight: 600;
   }
   
-  .maximize:hover::after {
+  .icon:hover::after {
     cursor: pointer;
-    opacity: .8;
+    opacity: .5;
   }
 }
 
@@ -38,10 +38,8 @@
   #editor {
     font-size: 1.1em;
     width: 100%;
-    min-height: 200px;
     padding: 5px;
     background-color: #c0d8d8;
-    resize: vertical;
   }
 }
 
@@ -50,6 +48,8 @@
   max-width: 800px;
   box-shadow: 1px 1px 10px 2px #3a5f5f;
   border: 1px solid #1d2f2f;
+  display: flex;
+  flex-direction: column;
 
   #preview {
     width: 100%;
@@ -95,4 +95,30 @@
       margin: 2rem auto;
     }
   }
+}
+
+.display {
+  display: none;
+}
+
+.min-height {
+  min-height: 200px;
+}
+
+.full-height {
+  min-height: 90vh;
+}
+
+.resize-vertical {
+  resize: vertical;
+}
+
+.resize-none {
+  resize: none;
+}
+
+.minimize::after {
+  font-family: "Font Awesome 6 Free";
+  content: '\f78c  ';
+  font-weight: 600;
 }

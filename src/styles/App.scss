@@ -40,6 +40,7 @@
     width: 100%;
     padding: 5px;
     background-color: #c0d8d8;
+    transition: min-height 350ms ease-in-out;
   }
 }
 
@@ -56,6 +57,7 @@
     padding-block: 10px;
     padding-inline: 20px;
     background-color: #c0d8d8;
+    transition: min-height 350ms ease-in-out;
 
     pre {
       display: block;
@@ -101,8 +103,12 @@
   display: none;
 }
 
-.min-height {
+.min-height-editor {
   min-height: 200px;
+}
+
+.min-height-preview {
+  min-height: 50px;
 }
 
 .full-height {

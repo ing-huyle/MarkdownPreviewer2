@@ -9,7 +9,7 @@ const App = () => {
   
   const handleClickEditor = () => {
     $(".preview-wrapper").toggleClass("display");
-    $("#editor").toggleClass("min-height");
+    $("#editor").toggleClass("min-height-editor");
     $("#editor").toggleClass("full-height");
     $("#editor").toggleClass("resize-vertical");
     $("#editor").toggleClass("resize-none");
@@ -19,6 +19,7 @@ const App = () => {
 
   const handleClickPreview = () => {
     $(".editor-wrapper").toggleClass("display");
+    $("#preview").toggleClass("min-height-preview");
     $("#preview").toggleClass("full-height");
     $(".icon").toggleClass("minimize");
     $(".icon").toggleClass("maximize");
@@ -39,14 +40,14 @@ const App = () => {
           <div>Editor</div>
           <div className="icon maximize" onClick={handleClickEditor}></div>
         </div>
-        <textarea id="editor" className="resize-vertical min-height" value={value} onChange={handleChange}></textarea>
+        <textarea id="editor" className="resize-vertical min-height-editor" value={value} onChange={handleChange}></textarea>
       </div>
       <div className="preview-wrapper">
         <div className="titlebar">
           <div>Preview</div>
           <div className="icon maximize" onClick={handleClickPreview}></div>
         </div>
-        <div id="preview"></div>
+        <div id="preview" className="min-height-preview"></div>
     </div>
     </div>
   )

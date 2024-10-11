@@ -1,11 +1,10 @@
 .titlebar {
-  font-family: Russo One;
+  font-family: 'Russo One', sans-serif;
   background-color: #4aa3a3;
   display: flex;
   justify-content: space-between;
   align-content: center;
-  padding-block: 0.3rem;
-  padding-inline: 0.6rem;
+  padding: 0.3rem 0.6rem;
   border-bottom: 1px solid #1d2f2f;
 
   .maximize::after {

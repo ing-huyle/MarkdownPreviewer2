@@ -3,30 +3,24 @@ import $ from 'jQuery';
 import { marked } from 'marked';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { textActions } from './textSlice';
+import { textActions } from './redux-toolkit/textSlice';
+import { editorActions } from './redux-toolkit/editorSlice';
+import { previewActions } from './redux-toolkit/previewSlice';
 import Editor from './Editor';
 import Preview from './Preview';
 
 const App = () => {
-  const text = useSelector((state) => state.text);
+  const text = useSelector((state) => state.text.text);
+  const isEditorExpanded = useSelector((state) => state.editor.isEditorExpanded);
+  const isPreviewExpanded = useSelector((state) => state.preview.isPreviewExpanded);
   const dispatch = useDispatch();
 
   const handleClickEditor = () => {
-    $('.preview-wrapper').toggleClass('display');
-    $('#editor').toggleClass('min-height-editor');
-    $('#editor').toggleClass('full-height');
-    $('#editor').toggleClass('resize-vertical');
-    $('#editor').toggleClass('resize-none');
-    $('.icon').toggleClass('minimize');
-    $('.icon').toggleClass('maximize');
+    dispatch(editorActions.set_editor_expanded());
   }
 
   const handleClickPreview = () => {
-    $('.editor-wrapper').toggleClass('display');
-    $('#preview').toggleClass('min-height-preview');
-    $('#preview').toggleClass('full-height');
-    $('.icon').toggleClass('minimize');
-    $('.icon').toggleClass('maximize');
+    dispatch(previewActions.set_preview_expanded());
   }
 
   const handleChange = (event) => {
@@ -39,8 +33,18 @@ const App = () => {
 
   return (
     <div className='app-wrapper'>
-      <Editor handleClickMaximize={handleClickEditor} text={text} handleChange={handleChange} />
-      <Preview handleClickMaximize={handleClickPreview} />
+      <Editor 
+        handleClickMaximize={handleClickEditor}
+        text={text}
+        handleChange={handleChange}
+        isEditorExpanded={isEditorExpanded}
+        isPreviewExpanded={isPreviewExpanded}
+      />
+      <Preview
+        handleClickMaximize={handleClickPreview}
+        isEditorExpanded={isEditorExpanded}
+        isPreviewExpanded={isPreviewExpanded}
+      />
     </div>
   )
 }

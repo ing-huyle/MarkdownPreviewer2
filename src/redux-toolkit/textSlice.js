@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import initialText from './initialText';
+import initialText from '../initialText';
 
 const initialState = { 
   text: initialText

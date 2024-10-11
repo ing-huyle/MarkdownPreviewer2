@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { textReducer } from "./textSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import { textReducer } from './textSlice';
 
 const store = configureStore({
   reducer: textReducer

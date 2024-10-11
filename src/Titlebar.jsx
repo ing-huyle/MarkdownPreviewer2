@@ -1,10 +1,10 @@
-import "./styles/Titlebar.scss";
+import './styles/Titlebar.scss';
 
 const Titlebar = ({ name, handleClickMaximize }) => {
   return (
-    <div className="titlebar">
+    <div className='titlebar'>
       <div>{name}</div>
-      <div className="icon maximize" onClick={handleClickMaximize}></div>
+      <div className='icon maximize' onClick={handleClickMaximize}></div>
     </div>
   );
 };

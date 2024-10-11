@@ -1,2 +1,2 @@
 # Markdown Previewer
-This is my 2nd project.
+This project works the same as the MarkdownPreviewer1 except it uses SASS, jQuery, Redux toolkit and multiple components to demonstrate my knowledge. Of course, for such a small project it's not efficient.

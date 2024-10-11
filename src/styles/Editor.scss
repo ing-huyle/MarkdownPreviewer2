@@ -1,0 +1,20 @@
+.editor-wrapper {
+  width: 80vw;
+  max-width: 594px;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  border: 1px solid #1d2f2f;
+  display: flex;
+  flex-direction: column;
+
+  #editor {
+    font-size: 1.1em;
+    width: 100%;
+    padding: 5px;
+    background-color: #c0d8d8;
+    transition: min-height 350ms ease-in-out;
+  }
+}
+
+.display {
+  display: none;
+}

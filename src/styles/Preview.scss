@@ -1,0 +1,58 @@
+.preview-wrapper {
+  width: 80vw;
+  max-width: 800px;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  border: 1px solid #1d2f2f;
+  display: flex;
+  flex-direction: column;
+
+  #preview {
+    width: 100%;
+    padding-block: 10px;
+    padding-inline: 20px;
+    background-color: #c0d8d8;
+    transition: min-height 350ms ease-in-out;
+
+    pre {
+      display: block;
+      overflow: auto;
+      background: white;
+      padding: 5px;
+      line-height: 1.2;
+    }
+
+    p {
+      code {
+        padding: 3px;
+        font-weight: bold;
+        background: white;
+      }
+    }
+
+    blockquote {
+      border-left: 3px solid #224b4b;
+      color: #224b4b;
+      padding-left: 5px;
+      margin-left: 25px;
+    }
+
+    table {
+      border-collapse: collapse;
+
+      th, td {
+        border: 2px solid #224b4b;
+        padding-inline: 5px;
+      }
+    }
+
+    img {
+      display: block;
+      max-width: 90%;
+      margin: 2rem auto;
+    }
+  }
+}
+
+.display {
+  display: none;
+}

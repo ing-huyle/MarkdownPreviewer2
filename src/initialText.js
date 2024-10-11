@@ -1,4 +1,4 @@
-const initialValue = `# Welcome to my React Markdown Previewer!
+const initialText = `# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
@@ -43,4 +43,4 @@ And here. | Okay. | I think we get it.
 ![random picture](https://picsum.photos/1000/300)
 `;
 
-export default initialValue;
+export default initialText;

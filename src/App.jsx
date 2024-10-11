@@ -1,12 +1,16 @@
 import './styles/App.scss';
 import $ from "jQuery";
-import initialValue from './initialValue';
 import { marked } from 'marked';
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { textActions } from './textSlice';
+import Editor from './Editor';
+import Preview from './Preview';
 
 const App = () => {
-  const [value, setValue] = useState(initialValue);
-  
+  const text = useSelector((state) => state.text);
+  const dispatch = useDispatch();
+
   const handleClickEditor = () => {
     $(".preview-wrapper").toggleClass("display");
     $("#editor").toggleClass("min-height-editor");
@@ -26,29 +30,17 @@ const App = () => {
   }
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    dispatch(textActions.set_text(event.target.value))
   }
 
   useEffect(() => {
-    $("#preview").html(marked.parse(value));
-  }, [value]);
+    $("#preview").html(marked.parse(text));
+  }, [text]);
 
   return (
     <div className="app-wrapper">
-      <div className="editor-wrapper">
-        <div className="titlebar">
-          <div>Editor</div>
-          <div className="icon maximize" onClick={handleClickEditor}></div>
-        </div>
-        <textarea id="editor" className="resize-vertical min-height-editor" value={value} onChange={handleChange}></textarea>
-      </div>
-      <div className="preview-wrapper">
-        <div className="titlebar">
-          <div>Preview</div>
-          <div className="icon maximize" onClick={handleClickPreview}></div>
-        </div>
-        <div id="preview" className="min-height-preview"></div>
-    </div>
+      <Editor handleClickMaximize={handleClickEditor} text={text} handleChange={handleChange} />
+      <Preview handleClickMaximize={handleClickPreview} />
     </div>
   )
 }

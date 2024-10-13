@@ -9,7 +9,7 @@ const textSlice = createSlice({
   name: 'text',
   initialState,
   reducers: {
-    set_text: (state, action) => {
+    setText: (state, action) => {
       state.text = action.payload;
     }
   }

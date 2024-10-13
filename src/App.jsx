@@ -16,15 +16,15 @@ const App = () => {
   const dispatch = useDispatch();
 
   const handleClickEditor = () => {
-    dispatch(editorActions.set_editor_expanded());
+    dispatch(editorActions.setEditorExpanded());
   }
 
   const handleClickPreview = () => {
-    dispatch(previewActions.set_preview_expanded());
+    dispatch(previewActions.setPreviewExpanded());
   }
 
   const handleChange = (event) => {
-    dispatch(textActions.set_text(event.target.value))
+    dispatch(textActions.setText(event.target.value))
   }
 
   useEffect(() => {

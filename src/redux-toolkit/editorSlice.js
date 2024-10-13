@@ -6,7 +6,7 @@ const editorSlice = createSlice({
   name: 'editor',
   initialState,
   reducers: {
-    set_editor_expanded: (state) => {
+    setEditorExpanded: (state) => {
       state.isEditorExpanded = !state.isEditorExpanded;
     }
   }

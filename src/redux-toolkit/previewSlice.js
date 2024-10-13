@@ -6,7 +6,7 @@ const previewSlice = createSlice({
   name: 'preview',
   initialState,
   reducers: {
-    set_preview_expanded: (state) => {
+    setPreviewExpanded: (state) => {
       state.isPreviewExpanded = !state.isPreviewExpanded;
     }
   }

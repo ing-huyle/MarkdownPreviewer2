@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { textActions } from './redux-toolkit/textSlice';
 import { editorActions } from './redux-toolkit/editorSlice';
 import { previewActions } from './redux-toolkit/previewSlice';
-import Editor from './Editor';
-import Preview from './Preview';
+import Editor from './components/Editor';
+import Preview from './components/Preview';
 
 const App = () => {
   const text = useSelector((state) => state.text.text);

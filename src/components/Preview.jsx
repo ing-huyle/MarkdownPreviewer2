@@ -1,4 +1,4 @@
-import './styles/Preview.scss';
+import '../styles/Preview.scss';
 import Titlebar from './Titlebar';
 
 const Preview = ({ handleClickMaximize, isEditorExpanded, isPreviewExpanded }) => {

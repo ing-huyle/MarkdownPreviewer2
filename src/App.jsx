@@ -45,6 +45,9 @@ const App = () => {
         isEditorExpanded={isEditorExpanded}
         isPreviewExpanded={isPreviewExpanded}
       />
+      <p id='coded'>Coded by<a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing.huyle</a><br/>
+        Designed by freeCodeCamp
+      </p>
     </div>
   )
 }

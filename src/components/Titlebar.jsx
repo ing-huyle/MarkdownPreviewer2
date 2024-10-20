@@ -1,4 +1,4 @@
-import './styles/Titlebar.scss';
+import '../styles/Titlebar.scss';
 
 const Titlebar = ({ name, handleClickMaximize, isEditorExpanded, isPreviewExpanded }) => {
   return (

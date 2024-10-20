@@ -1,4 +1,4 @@
-import './styles/Editor.scss';
+import '../styles/Editor.scss';
 import Titlebar from './Titlebar';
 
 const Editor = ({ handleClickMaximize, text, handleChange, isEditorExpanded, isPreviewExpanded }) => {
